@@ -1,3 +1,28 @@
+> ### Why this fork exists
+>
+> I use this library in a desktop material editor and ran into a few issues in the WebGPU branch.
+> This fork is where I stage patches before offering them upstream. It is **not** a maintained
+> alternative and it will fall behind. Use
+> [gkjohnson/three-gpu-pathtracer](https://github.com/gkjohnson/three-gpu-pathtracer).
+>
+> Filed against upstream so far:
+>
+> - [#826](https://github.com/gkjohnson/three-gpu-pathtracer/issues/826): the texture atlas
+>   repacks on nearly every `setTextures` call (materials sorted by `uuid`, positional hash
+>   compare), costing 760 to 805 ms per repack with 9 textures. Fixed in
+>   [#830](https://github.com/gkjohnson/three-gpu-pathtracer/pull/830) (merged), branch
+>   [`atlas-stable-pack`](https://github.com/m-w-marker/three-gpu-pathtracer/tree/atlas-stable-pack).
+> - [#829](https://github.com/gkjohnson/three-gpu-pathtracer/issues/829): eight findings from
+>   wiring Intel Open Image Denoise into the WebGPU path tracer.
+> - [#952](https://github.com/gkjohnson/three-gpu-pathtracer/pull/952): the WebGPU branch reads
+>   the sheen roughness map from the red channel instead of alpha, branch
+>   [`webgpu-sheen-roughness-alpha`](https://github.com/m-w-marker/three-gpu-pathtracer/tree/webgpu-sheen-roughness-alpha).
+>
+> Every performance or rendering claim here is measured on a real GPU (headless Edge + CDP), not
+> eyeballed.
+
+---
+
 # three-gpu-pathtracer
 
 [![npm version](https://img.shields.io/npm/v/three-gpu-pathtracer.svg?style=flat-square)](https://www.npmjs.com/package/three-gpu-pathtracer)
