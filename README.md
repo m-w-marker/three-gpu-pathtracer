@@ -15,12 +15,15 @@
 > - [#829](https://github.com/gkjohnson/three-gpu-pathtracer/issues/829): eight findings from
 >   wiring Intel Open Image Denoise into the WebGPU path tracer.
 > - [#952](https://github.com/gkjohnson/three-gpu-pathtracer/pull/952): the WebGPU branch reads
->   the sheen roughness map from the red channel instead of alpha, branch
+>   the sheen roughness map from the red channel instead of alpha (merged), branch
 >   [`webgpu-sheen-roughness-alpha`](https://github.com/m-w-marker/three-gpu-pathtracer/tree/webgpu-sheen-roughness-alpha).
 > - [#954](https://github.com/gkjohnson/three-gpu-pathtracer/issues/954): the background and clear
->   color go through an 8-bit linear texture and are truncated, so `0x080808` renders black.
+>   color go through an 8-bit linear texture and are truncated, so `0x080808` renders black. Fix in
+>   [#965](https://github.com/gkjohnson/three-gpu-pathtracer/pull/965) (open), branch
+>   [`webgpu-background-half-float`](https://github.com/m-w-marker/three-gpu-pathtracer/tree/webgpu-background-half-float).
 > - [#955](https://github.com/gkjohnson/three-gpu-pathtracer/issues/955): depth of field in the
->   WebGL path focuses at `focusDistance + near`, on a sphere instead of a plane.
+>   WebGL path focuses at `focusDistance + near`, on a sphere instead of a plane (closed, the
+>   WebGL path tracer is deprecated, see [#779](https://github.com/gkjohnson/three-gpu-pathtracer/issues/779)).
 >
 > Every performance or rendering claim here is measured on a real GPU (headless Edge + CDP), not
 > eyeballed.
